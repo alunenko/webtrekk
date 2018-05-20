@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
+=======
+import { CustomerComponent } from './customer/customer.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+>>>>>>> d32bf2b... Edit the customer
 
 @NgModule({
   declarations: [
@@ -10,7 +15,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
