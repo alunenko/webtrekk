@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Customer } from '../customer';
+import { CUSTOMERS } from '../mock-customers';
 
 @Component({
   selector: 'app-customer',
@@ -9,17 +10,7 @@ import { Customer } from '../customer';
 })
 export class CustomerComponent implements OnInit {
 
-  customer = {
-      "customerID": 1,
-      "name": {
-          "first": "Peter",
-          "last": "Smith"
-      },
-      "birthday": "1996-10-12",
-      "gender": "m",
-      "lastContact": "2017-06-01T23:28:56.782Z",
-      "customerLifetimeValue": 191.12
-  };
+  customers = CUSTOMERS;
 
   constructor() { }
 
