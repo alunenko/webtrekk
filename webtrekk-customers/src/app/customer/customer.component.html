@@ -1,22 +1,18 @@
 <div class="row">
-  <div class="col text-center">
-    <p>Hi, my name is ... <!-- {{ customer.name.first + ' ' + customer.name.last | uppercase }} --></p>
-  </div>
-</div>
-
-<div class="row">
   <div class="col">
     <h2>Customer list</h2>
     <ul class="list-group">
-      <li class="list-group-item"
-          *ngFor="let customer of customers">{{ customer.name.first + ' ' + customer.name.last }}</li>
+      <li *ngFor="let customer of customers"
+          class="list-group-item"
+          (click)="onSelect(customer)">{{ customer.name.first + ' ' + customer.name.last }}</li>
     </ul>
   </div>
 </div>
 
-<form class="mt-5">
+<form *ngIf="selectedCustomer"
+      class="mt-5">
   <div class="card">
-    <div class="card-header">Edit customer</div>
+    <div class="card-header">Edit customer {{ selectedCustomer.name.first + ' ' + selectedCustomer.name.last | uppercase }}</div>
     <div class="card-body">
       <div class="form-row">
         <div class="col">
@@ -26,8 +22,7 @@
                 <label for="edit_form_first_name">First name</label>
               </div>
               <div class="col">
-                <!--[(ngModel)]="customer.name.first"-->
-                <input
+                <input [(ngModel)]="selectedCustomer.name.first"
                 id="edit_form_first_name"
                 name="customer_first_name"
                 placeholder="first name">
@@ -42,8 +37,7 @@
                 <label for="edit_form_last_name">Last name</label>
               </div>
               <div class="col">
-                <!--[(ngModel)]="customer.name.last"-->
-                <input
+                <input [(ngModel)]="selectedCustomer.name.last"
                 id="edit_form_last_name"
                 name="customer_last_name"
                 placeholder="last name">
@@ -55,4 +49,3 @@
     </div>
   </div>
 </form>
-
