@@ -9,43 +9,4 @@
   </div>
 </div>
 
-<form *ngIf="selectedCustomer"
-      class="mt-5">
-  <div class="card">
-    <div class="card-header">Edit customer {{ selectedCustomer.name.first + ' ' + selectedCustomer.name.last | uppercase }}</div>
-    <div class="card-body">
-      <div class="form-row">
-        <div class="col">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-4">
-                <label for="edit_form_first_name">First name</label>
-              </div>
-              <div class="col">
-                <input [(ngModel)]="selectedCustomer.name.first"
-                id="edit_form_first_name"
-                name="customer_first_name"
-                placeholder="first name">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-4">
-                <label for="edit_form_last_name">Last name</label>
-              </div>
-              <div class="col">
-                <input [(ngModel)]="selectedCustomer.name.last"
-                id="edit_form_last_name"
-                name="customer_last_name"
-                placeholder="last name">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
+<app-customer-detail [customer]="selectedCustomer"></app-customer-detail>
