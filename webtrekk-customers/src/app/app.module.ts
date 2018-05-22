@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
-import { CustomerDetailComponent } from './customer-detail/customer-detail.component'; // <-- NgModel lives here
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { AboutMeComponent } from './about-me/about-me.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
-    CustomerDetailComponent
+    CustomerDetailComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

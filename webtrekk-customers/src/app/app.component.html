@@ -6,8 +6,25 @@
     </div>
 
     <div class="row">
-        <div class="col text-center">
-            <app-customer></app-customer>
+        <div class="col">
+            <nav>
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a routerLink="/customer-list"
+                           routerLinkActive="active"
+                           class="nav-link"
+                           href="#">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/about-me"
+                           routerLinkActive="active"
+                           class="nav-link"
+                           href="#">About me</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
+
+    <router-outlet></router-outlet>
 </div>

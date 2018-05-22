@@ -1,7 +1,6 @@
-<form *ngIf="customer"
-      class="mt-5">
+<form *ngIf="customer">
   <div class="card">
-    <div class="card-header">Edit customer {{ customer.name.first + ' ' + customer.name.last | uppercase }}</div>
+    <div class="card-header text-center">Edit customer {{ customer.name.first + ' ' + customer.name.last | uppercase }}</div>
     <div class="card-body">
       <div class="form-row">
         <div class="col">

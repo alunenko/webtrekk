@@ -1,10 +1,11 @@
 <div class="row">
-  <div class="col">
+  <div class="col text-center">
     <h2>Customer list</h2>
     <ul class="list-group">
       <li *ngFor="let customer of customers"
-          class="list-group-item"
-          (click)="onSelect(customer)">{{ customer.name.first + ' ' + customer.name.last }}</li>
+          class="list-group-item p-0">
+        <a routerLink="/customer/{{customer.customerID}}">{{ customer.name.first + ' ' + customer.name.last }}</a>
+      </li>
     </ul>
   </div>
 </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../customer';
-import { CUSTOMERS } from '../mock-customers';
 
+import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -11,7 +10,6 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerComponent implements OnInit {
 
-    selectedCustomer: Customer;
     customers: Customer[];
 
     constructor(
@@ -20,10 +18,6 @@ export class CustomerComponent implements OnInit {
 
     ngOnInit() {
         this.getCustomers();
-    }
-
-    onSelect(customer: Customer): void {
-        this.selectedCustomer = customer;
     }
 
     getCustomers(): void {
