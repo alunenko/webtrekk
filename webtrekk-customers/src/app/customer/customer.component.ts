@@ -9,7 +9,6 @@ import { CustomerService } from '../customer.service';
     styleUrls: ['./customer.component.less']
 })
 export class CustomerComponent implements OnInit {
-
     customers: Customer[];
 
     constructor(
@@ -23,5 +22,10 @@ export class CustomerComponent implements OnInit {
     getCustomers(): void {
         this.customerService.getCustomers()
             .subscribe(customers => this.customers = customers);
+    }
+
+    delete(customer: Customer): void {
+        this.customers = this.customers.filter(c => c !== customer);
+        this.customerService.deleteCustomer(customer).subscribe();
     }
 }

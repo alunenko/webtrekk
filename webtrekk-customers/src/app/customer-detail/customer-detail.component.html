@@ -3,14 +3,16 @@
     <div class="card-header text-center">Edit customer {{ customer.name.first + ' ' + customer.name.last | uppercase }}</div>
     <div class="card-body">
       <div class="form-row">
-        <div class="col">
+        <div class="col-sm-12 col-md-6">
           <div class="form-group">
             <div class="row">
-              <div class="col-4">
-                <label for="edit_form_first_name">First name</label>
+              <div class="col-4 align-self-center">
+                <label class="m-0"
+                       for="edit_form_first_name">First name</label>
               </div>
               <div class="col">
                 <input [(ngModel)]="customer.name.first"
+                       class="form-control w-100"
                        id="edit_form_first_name"
                        name="customer_first_name"
                        placeholder="first name">
@@ -18,20 +20,28 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-sm-12 col-md-6">
           <div class="form-group">
             <div class="row">
-              <div class="col-4">
-                <label for="edit_form_last_name">Last name</label>
+              <div class="col-4 align-self-center">
+                <label class="m-0"
+                       for="edit_form_last_name">Last name</label>
               </div>
               <div class="col">
                 <input [(ngModel)]="customer.name.last"
+                       class="form-control w-100"
                        id="edit_form_last_name"
                        name="customer_last_name"
                        placeholder="last name">
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col d-flex justify-content-between">
+          <button (click)="goBack()" class="btn btn-secondary">go back</button>
+          <button (click)="save()" class="btn btn-primary">save</button>
         </div>
       </div>
     </div>

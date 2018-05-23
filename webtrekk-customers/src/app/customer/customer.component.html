@@ -1,13 +1,19 @@
-<div class="row">
-  <div class="col text-center">
-    <h2>Customer list</h2>
-    <ul class="list-group">
-      <li *ngFor="let customer of customers"
-          class="list-group-item p-0">
-        <a routerLink="/customer/{{customer.customerID}}">{{ customer.name.first + ' ' + customer.name.last }}</a>
-      </li>
-    </ul>
+<div class="row p-2">
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        <h2>Customer list</h2>
+        <ul class="list-group">
+          <li *ngFor="let customer of customers"
+              class="list-group-item d-flex justify-content-between">
+            <a routerLink="/customer/{{customer.id}}"
+               title="Edit {{ customer.name.first + ' ' + customer.name.last }}"><span class="customer-name align-self-center">{{ customer.name.first + ' ' + customer.name.last }}</span></a>
+            <span class="btn btn-danger align-self-center"
+                  title="delete {{ customer.name.first + ' ' + customer.name.last }}"
+                  (click)="delete(customer)">x</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
-
-<app-customer-detail [customer]="selectedCustomer"></app-customer-detail>
